@@ -91,6 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChapterCardReference
   ChapterTitle: {fileID: 8308154053369267803}
+  ClickButton: {fileID: 7817075175885217400}
 --- !u!114 &7817075175885217400
 MonoBehaviour:
   m_ObjectHideFlags: 0

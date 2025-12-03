@@ -24,16 +24,19 @@ public class CourseContentManager : MonoBehaviour
 
     public List<CourseChapter> m_courseChapters = new List<CourseChapter>();
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         for(int i =0; i<m_courseChapters.Count; i++)
         {
+            int chapterIndex = i;
+
             GameObject ChapterCard = Instantiate(ChapterCardPrefab, Container);
             ChapterCard.GetComponent<ChapterCardReference>().ChapterTitle.text = $"Chapter {i+1} : {m_courseChapters[i].CourseChapterTitle}";
             //button == arg entry on click toggleCard(i)
 
+            ChapterCard.GetComponent<ChapterCardReference>().ClickButton.onClick.AddListener(() => toggleCard(chapterIndex));
+        
             for(int j=0; j < m_courseChapters[i].CourseSection.Count; j++)
             {
                 GameObject Sectioncard = Instantiate(SectionCardPrefab, Container);
